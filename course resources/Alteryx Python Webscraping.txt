@@ -1,0 +1,7 @@
+from ayx import Package
+from ayx import Alteryx
+Package.installPackages(['lxml'])   
+import pandas as pd
+df = pd.read_html(r'https://www.imdb.com/chart/toptv/')
+df[0].head()
+Alteryx.write(df[0],1)
